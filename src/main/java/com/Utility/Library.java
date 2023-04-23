@@ -79,6 +79,21 @@ public static String Excelpath(String FileName) {
 	System.out.println("Excel Sheet Path For Test Case=="+path);
 	return path;
 }
+	
+	public static void Dropdown(WebElement element,String valuetobeselect,String Dropdownname) {
+	Library.Explicitlywait(element, 50);
+	element.click();
+	Library.Explicitlywait(driver.findElement(By.xpath("//span[contains(text(),'"+valuetobeselect+"'")), 50);
+	System.out.println("//span[contains(text(),'"+valuetobeselect+"'");
+	WebElement drpdown=driver.findElement(By.xpath("//span[contains(text(),'"+valuetobeselect+"'"));
+	
+	String text=drpdown.getText();
+	drpdown.click();
+	test.log(Status.PASS,Dropdownname+" Dropdown Value Successfully selected=="+"<b>"+text+"</b>");
+	   Reporter.log(Dropdownname+" Dropdown Value Successfully selected=="+"<b>"+text+"</b>");
+	
+}
+
 
 
 

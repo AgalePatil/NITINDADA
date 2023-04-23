@@ -183,6 +183,7 @@ public class ExcelReader {
 	
 	// returns true if data is set successfully else false
 	public boolean setCellData(String sheetName,String colName,int rowNum, String data){
+		rowNum=rowNum+1;
 		try{
 		fis = new FileInputStream(path); 
 		workbook = new XSSFWorkbook(fis);
@@ -225,7 +226,7 @@ public class ExcelReader {
 		workbook.write(fileOut);
 
 	    fileOut.close();	
-
+System.out.println("Data write successfulyy row no.=="+rowNum);
 		}
 		catch(Exception e){
 			e.printStackTrace();

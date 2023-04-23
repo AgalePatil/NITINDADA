@@ -33,7 +33,7 @@ public class Listener extends BaseClass implements ITestListener {
 
 		try {
 			String recordname = result.getTestClass().getName() + "_" + result.getMethod().getMethodName();
-			ScreenRecorderUtil.startRecord(recordname);
+			//ScreenRecorderUtil.startRecord(recordname);
 		} catch (Exception e) {
 
 			e.printStackTrace();
@@ -45,7 +45,7 @@ public class Listener extends BaseClass implements ITestListener {
 		extenttest.get().log(Status.PASS, MarkupHelper.createLabel("Test Case PASS ", ExtentColor.GREEN));
 
 		try {
-			ScreenRecorderUtil.stopRecord();
+			//ScreenRecorderUtil.stopRecord();
 			Thread.sleep(1500);
 			Library.test.addScreenCaptureFromPath(reportpath());
 		} catch (Exception e) {
@@ -68,7 +68,7 @@ public class Listener extends BaseClass implements ITestListener {
 
 		try {
 
-			ScreenRecorderUtil.stopRecord();
+			//ScreenRecorderUtil.stopRecord();
 			Library.screenshot("Failure");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

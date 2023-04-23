@@ -4,6 +4,7 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
@@ -23,8 +24,10 @@ public class BaseClass {
 		
 		
 		if(Browser.equalsIgnoreCase("chrome")) {
+			ChromeOptions option=new ChromeOptions();
+			option.addArguments("--remote-allow-origins=*");
 			WebDriverManager.chromedriver().setup();
-			driver=new ChromeDriver();
+			driver=new ChromeDriver(option);
 			}
 		
 		else if(Browser.equalsIgnoreCase("edge")) {
@@ -50,7 +53,7 @@ public class BaseClass {
 	@AfterMethod()
 	public void TearDown() {
 		
-		driver.close();
+		//driver.close();
 		
 		
 	}
